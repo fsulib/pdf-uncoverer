@@ -10,6 +10,3 @@ if coverpage:
     print("{0} has a coverpage".format(file)) 
 else:
     print("{0} has no coverpage".format(file)) 
-
-
-
