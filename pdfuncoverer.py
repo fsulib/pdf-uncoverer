@@ -13,6 +13,8 @@ def has_coverpage(file):
   page1 = reader.pages[0]
   if '/Annots' in page1:
     for annot in page1['/Annots']:
-      if annot.get_object()['/A']['/URI'] in coverpage_emails:
-        coverpage = True
+      if '/A' in annot.get_object():
+        if '/URI' in annot.get_object()['/A']:
+          if annot.get_object()['/A']['/URI'] in coverpage_emails:
+            coverpage = True
   return coverpage
